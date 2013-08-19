@@ -1,9 +1,4 @@
 NewStat::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/stats"
-  get "static_pages/account"
-  get "static_pages/ranges"
-  get "static_pages/messages"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
