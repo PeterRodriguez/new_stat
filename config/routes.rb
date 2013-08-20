@@ -1,4 +1,9 @@
 NewStat::Application.routes.draw do
+  get "static_pages/home"
+  get "static_pages/last25"
+  get "static_pages/detailedsms"
+  get "static_pages/monthlysms"
+  get "static_pages/dailysms"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
