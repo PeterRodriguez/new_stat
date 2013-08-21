@@ -1,259 +1,134 @@
 <% provide(:title, 'Detailed SMS') %>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>SMS &middot; STATS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 60px;
-      }
-
-      /* Custom container */
-      .container {
-        margin: 0 auto;
-        max-width: 1000px;
-      }
-      .container > hr {
-        margin: 60px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 80px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 100px;
-        line-height: 1;
-      }
-      .jumbotron .lead {
-        font-size: 24px;
-        line-height: 1.25;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-
-
-      /* Customize the navbar links to be fill the entire space of the .navbar */
-      .navbar .navbar-inner {
-        padding: 0;
-      }
-      .navbar .nav {
-        margin: 0;
-        display: table;
-        width: 100%;
-      }
-      .navbar .nav li {
-        display: table-cell;
-        width: 1%;
-        float: none;
-      }
-      .navbar .nav li a {
-        font-weight: bold;
-        text-align: center;
-        border-left: 1px solid rgba(255,255,255,.75);
-        border-right: 1px solid rgba(0,0,0,.1);
-      }
-      .navbar .nav li:first-child a {
-        border-left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      .navbar .nav li:last-child a {
-        border-right: 0;
-        border-radius: 0 3px 3px 0;
-      }
-    </style>
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-    <![endif]-->
-
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="ico/favicon.png">
-  </head>
-
-  <body>
-
-    <div class="container">
-
-      <div class="masthead">
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li><a href="./index.html">Home</a></li>
-                <li class="active"><a href="./stats.html">Client Stats</a></li>
-                <li><a href="./user.html">Your Account</a></li>
-                <li><a href="./range.html">Number Ranges</a></li>
-                <li><a href="./message.html">Messages</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.navbar -->
+<div class="well form-search">  
+<div class="row">
+  <div class="span12">
+    <div class="row">
+      <div class="span3">
+        <label class="control-label" >Name</label>
+        <div class="unselected-field" style="display: inline-block;" id="selectCountry">
+          <select id="countrySelect" name="countrySelect">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option>Option 5</option>
+            <option>Option 6</option>
+            <option>Option 7</option>
+            <option>Option 8</option>
+          </select>
+      </div>​
       </div>
-
-      <div class="well form-search">  
-        <div class="row">
-          <div class="span12">
-            <div class="row">
-              <div class="span3">
-                <label class="control-label" >Name</label>
-                <div class="unselected-field" style="display: inline-block;" id="selectCountry">
-                  <select id="countrySelect" name="countrySelect">
-                    <option>Option 1</option>
-                    <option>Option 2</option>
-                    <option>Option 3</option>
-                    <option>Option 4</option>
-                    <option>Option 5</option>
-                    <option>Option 6</option>
-                    <option>Option 7</option>
-                    <option>Option 8</option>
-                  </select>
-              </div>​
-              </div>
-              <div class="span3">
-                <label class="control-label" >Number Range Begins</label>
-                <div class="input">
-                  <input id="id_range_begins" type="text" name="to_date" maxlength="13" />
-                  <span class="help-block"> </span>
-                </div>
-              </div>
-              <div class="span3">
-                <label class="control-label" >Number Range Ends</label>
-                <div class="input">
-                  <input id="id_range_ends" type="text" name="to_date2" maxlength="13" />
-                  <span class="help-block"> </span>
-                </div>
-              </div>     
-            </div>
-          </div>
-          <div class="span12">
-            <div class="row">
-              <div class="offset1 span3">
-                    <label class="control-label" for="id_from_date">From</label>
-                    <div class="input">
-                        <input id="id_from_date" type="text" name="from_date" value="2013-07-11" maxlength="10" />
-                        <span class="help-block"> </span>
-                    </div>
-                </div>
-                <div class="offset1 span3">
-                    <label class="control-label" for="id_to_date">To</label>
-                    <div class="input">
-                        <input id="id_to_date" type="text" name="to_date" value="2013-07-11" maxlength="10" />
-                        <span class="help-block"> </span>
-                    </div>
-                </div>
-            </div>
-          </div>
+      <div class="span3">
+        <label class="control-label" >Number Range Begins</label>
+        <div class="input">
+          <input id="id_range_begins" type="text" name="to_date" maxlength="13" />
+          <span class="help-block"> </span>
         </div>
       </div>
-
-      <div class="row ">
-        <div class="span12">
-          <div class="offset8 span1">
-            <div class="actions">
-              <input class="btn btn-primary" type=submit name=submit value=Search />
-            </div>
-          </div>
-          <div class="span1">
-            <div class="actions">
-              <input class="btn btn-primary" type=submit name=submit value=Clear Filters />
-            </div>
-          </div>
+      <div class="span3">
+        <label class="control-label" >Number Range Ends</label>
+        <div class="input">
+          <input id="id_range_ends" type="text" name="to_date2" maxlength="13" />
+          <span class="help-block"> </span>
         </div>
-      </div>
-
-      <div class="row"><div class="span6">&nbsp;</div></div>
-      <div class="row"><div class="span6">&nbsp;</div></div>
-
-      <table class="table table-bordered">  
-        <thead>  
-          <tr>  
-            <th>Name</th>  
-            <th>Client</th>  
-            <th>Range starts</th>  
-            <th>Range ends</th>  
-            <th>Number of messages</th>
-            <th></th>
-          </tr>  
-        </thead>
-        <tfoot>
-          <tr>
-          <td scope="row">Total</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          </tr>
-        </tfoot>
-        <tbody>  
-          <tr>  
-            <td>001</td>  
-            <td>Rammohan </td>  
-            <td>Reddy</td>  
-            <td>A+</td>
-            <td>1</td>
-          </tr>  
-          <tr>  
-            <td>002</td>  
-            <td>Smita</td>  
-            <td>Pallod</td>  
-            <td>A</td>
-            <td>2</td>  
-          </tr>  
-          <tr>  
-            <td>003</td>  
-            <td>Rabindranath</td>  
-            <td>Sen</td>  
-            <td>A+</td>
-            <td>3</td>  
-          </tr>
-          <tr class="info">
-            <td scope="row">Total</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>4</td>
-          </tr>  
-        </tbody>  
-      </table> 
-
-      <div class="span10">
-        <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto">
+      </div>     
+    </div>
+  </div>
+  <div class="span12">
+    <div class="row">
+      <div class="offset1 span3">
+            <label class="control-label" for="id_from_date">From</label>
+            <div class="input">
+                <input id="id_from_date" type="text" name="from_date" value="2013-07-11" maxlength="10" />
+                <span class="help-block"> </span>
+            </div>
         </div>
-      </div>
+        <div class="offset1 span3">
+            <label class="control-label" for="id_to_date">To</label>
+            <div class="input">
+                <input id="id_to_date" type="text" name="to_date" value="2013-07-11" maxlength="10" />
+                <span class="help-block"> </span>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
 
-      <hr>
+<div class="row ">
+<div class="span12">
+  <div class="offset8 span1">
+    <div class="actions">
+      <input class="btn btn-primary" type=submit name=submit value=Search />
+    </div>
+  </div>
+  <div class="span1">
+    <div class="actions">
+      <input class="btn btn-primary" type=submit name=submit value=Clear Filters />
+    </div>
+  </div>
+</div>
+</div>
 
-      <div class="footer">
-        <p>&copy; Maliestraat Innovations C.V.</p>
-      </div>
+<div class="row"><div class="span6">&nbsp;</div></div>
+<div class="row"><div class="span6">&nbsp;</div></div>
 
-    </div> <!-- /container -->
+<table class="table table-bordered">  
+<thead>  
+  <tr>  
+    <th>Name</th>  
+    <th>Client</th>  
+    <th>Range starts</th>  
+    <th>Range ends</th>  
+    <th>Number of messages</th>
+    <th></th>
+  </tr>  
+</thead>
+<tfoot>
+  <tr>
+  <td scope="row">Total</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  </tr>
+</tfoot>
+<tbody>  
+  <tr>  
+    <td>001</td>  
+    <td>Rammohan </td>  
+    <td>Reddy</td>  
+    <td>A+</td>
+    <td>1</td>
+  </tr>  
+  <tr>  
+    <td>002</td>  
+    <td>Smita</td>  
+    <td>Pallod</td>  
+    <td>A</td>
+    <td>2</td>  
+  </tr>  
+  <tr>  
+    <td>003</td>  
+    <td>Rabindranath</td>  
+    <td>Sen</td>  
+    <td>A+</td>
+    <td>3</td>  
+  </tr>
+  <tr class="info">
+    <td scope="row">Total</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>4</td>
+  </tr>  
+</tbody>  
+</table> 
+
+<div class="span10">
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto">
+</div>
+</div>
 
     <!-- Le javascript
     ================================================== -->
