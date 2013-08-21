@@ -1,10 +1,12 @@
 NewStat::Application.routes.draw do
+  get "users/new"
+
   root  'static_pages#home'
-  #match '/home',    to: 'static_pages#home',    via: 'get'
-  match '/detailedsms',    to: 'static_pages#detailedsms',    via: 'get'
-  match '/dailysms',   to: 'static_pages#dailysms',   via: 'get'
-  match '/last25', to: 'static_pages#last25', via: 'get'
-  match '/monthlysms', to: 'static_pages#monthlysms', via: 'get'
+  match '/signup',        to: 'users#new',                  via: 'get'
+  match '/detailedsms',   to: 'static_pages#detailedsms',   via: 'get'
+  match '/dailysms',      to: 'static_pages#dailysms',      via: 'get'
+  match '/last25',        to: 'static_pages#last25',        via: 'get'
+  match '/monthlysms',    to: 'static_pages#monthlysms',    via: 'get'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
