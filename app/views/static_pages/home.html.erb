@@ -1,28 +1,28 @@
-<% provide(:title, 'Home') %>
-<div class="row-fluid">
-  <div class="span6">
-    <h2>Last 10 SMS</h2>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
-    <p><a class="btn btn-link btn-large" href="./message.html">View all messages &raquo;</a></p>
+<%if signed_in?  %> 
+  <% provide(:title, 'Home') %>
+  <div class="row-fluid">
+    <div class="span6">
+      <h2>Last 10 SMS</h2>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p>Message : "Donec id elit non mi porta gravida at eget metus" <br> Sender : 4498441321321 Receiver : 45656654654456465454</p>
+      <p><a class="btn btn-link btn-large" href="./message.html">View all messages &raquo;</a></p>
+    </div>
+    <div class="span6">
+      <h2>Graphic Last Month</h2>
+      <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+    </div>
   </div>
-  <div class="span6">
-    <h2>Graphic Last Month</h2>
-    <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
-    <div class="row"><div class="span6">&nbsp;</div></div>
-    <%= link_to "Sign up now!", signup_path , class: "btn btn-large btn-primary" %>
-  </div>
-</div>
-
-<div class="row"><div class="span6">&nbsp;</div></div>
+<% else %> 
+ <%= render 'sessions/new' %>
+<% end %>
 
 <script src="js/jquery-1.10.1.js"></script>
 <script src="http://code.highcharts.com/highcharts.js"></script>

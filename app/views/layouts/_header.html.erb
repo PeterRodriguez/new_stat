@@ -4,13 +4,17 @@
 	      <%= link_to "SMS STATS", root_path , id: "logo" %>
 	      <nav>
 	        <ul class="nav pull-right">
-	          <li><%= link_to "Home",			 root_path %></li>
-	          <li><%= link_to "Last 25",   		 last25_path %></li>
-	          <li><%= link_to "Detailed Report", detailedsms_path %></li>
-	          <li><%= link_to "Monthly Report",  monthlysms_path %></li>
-	          <li><%= link_to "Daily Report",    dailysms_path %></li>
+	          
+
 	          <% if signed_in? %>
-	            <li><%= link_to "Users", users_path %></li>
+		          <li><%= link_to "Home",			 root_path %></li>
+		          <li><%= link_to "Last 25",   		 last25_path %></li>
+		          <li><%= link_to "Detailed Report", detailedsms_path %></li>
+		          <li><%= link_to "Monthly Report",  monthlysms_path %></li>
+		          <li><%= link_to "Daily Report",    dailysms_path %></li>
+	          	<% if current_user.admin? %>
+	            	<li><%= link_to "Users", users_path %></li>
+	            <% end %>
 	            <li id="fat-menu" class="dropdown">
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 	                Account <b class="caret"></b>
@@ -24,8 +28,6 @@
 	                </li>
 	              </ul>
 	            </li>
-	          <% else %>
-	            <li><%= link_to "Sign in", signin_path %></li>
 	          <% end %>
 	        </ul>
 	      </nav>

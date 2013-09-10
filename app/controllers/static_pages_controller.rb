@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_filter :see_page, :except => :index
   def home
   end
 
